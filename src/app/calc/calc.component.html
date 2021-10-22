@@ -1,0 +1,11 @@
+{{sum}}
+
+<form [formGroup]="calcForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="addedNumber">Added Number</label>
+        <input id="addedNumber" type="number" formControlName="addedNumber">
+    </div>
+
+    <button type="submit">Calculate</button>
+    <button type="button" (click)="onReset()">Reset</button>
+</form>
