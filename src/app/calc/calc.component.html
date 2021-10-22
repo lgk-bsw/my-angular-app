@@ -1,11 +1,37 @@
-{{sum}}
+<div class="calc">
+    <mat-form-field appearance="fill">
+        <mat-label>Output</mat-label>
+        <input matInput type="text" [value]="sum" readonly>
+    </mat-form-field>
 
-<form [formGroup]="calcForm" (ngSubmit)="onSubmit()">
-    <div>
-        <label for="addedNumber">Added Number</label>
-        <input id="addedNumber" type="number" formControlName="addedNumber">
+    <div class="calc-numbers">
+        <button mat-button (click)="onSetInput(7)">7</button>
+        <button mat-button (click)="onSetInput(8)">8</button>
+        <button mat-button (click)="onSetInput(9)">9</button>
+
+        <button mat-button (click)="onSetInput(4)">4</button>
+        <button mat-button (click)="onSetInput(3)">5</button>
+        <button mat-button (click)="onSetInput(2)">6</button>
+
+        <button mat-button (click)="onSetInput(1)">1</button>
+        <button mat-button (click)="onSetInput(2)">2</button>
+        <button mat-button (click)="onSetInput(3)">3</button>
+
+        <button mat-button (click)="onSetInput(0)">0</button>
+        <button mat-button (click)="onSetInput('.')">.</button>
     </div>
 
-    <button type="submit">Calculate</button>
-    <button type="button" (click)="onReset()">Reset</button>
-</form>
+    <form [formGroup]="calcForm" (ngSubmit)="onSubmit()">
+        <div style="display: flex; gap: 1rem;">
+            <mat-form-field appearance="fill">
+                <mat-label>Input</mat-label>
+                <input matInput type="text" formControlName="addedNumber">
+            </mat-form-field>
+
+            <button type="submit" mat-fab color="primary" aria-label="Add">
+                <mat-icon>add</mat-icon>
+            </button>
+            <button type="button" (click)="onReset()" mat-button>Reset</button>
+        </div>
+    </form>
+</div>

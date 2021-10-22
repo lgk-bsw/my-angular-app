@@ -25,12 +25,18 @@ export class CalcComponent implements OnInit {
 
   onSubmit(): void {
     this.sum = this.calcService.clearSum()
-    this.calcService.addToSum(this.calcForm.value.addedNumber)
+    this.calcService.addToSum(parseFloat(this.calcForm.value.addedNumber))
     this.sum = this.calcService.getSum()
   }
 
   onReset(): void {
     this.sum = this.calcService.clearSum()
     this.calcForm.setValue({ addedNumber: 0 })
+  }
+
+  onSetInput(input: number | string): void {
+    this.calcForm.setValue({
+      addedNumber: this.calcForm.value.addedNumber.toString() + input
+    })
   }
 }

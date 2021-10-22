@@ -1,0 +1,12 @@
+.calc {
+    max-width: 400px;
+}
+
+.calc-numbers {
+    display: grid;
+    grid-template-areas: 
+        "a a a"
+        "a a a"
+        "a a a"
+        "a a a";
+}
