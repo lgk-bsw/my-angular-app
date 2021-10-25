@@ -13,3 +13,15 @@ $my-theme: mat.define-light-theme((
 ));
 
 @include mat.all-component-themes($my-theme);
+
+html {
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
